@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { IUser } from '../../interfaces/iuser.interface';
 import { UsersService } from '../../services/users.service';
 import { UserCardComponent } from '../../components/user-card/user-card.component';
+import { IData } from '../../interfaces/idata.interfaces';
 
 @Component({
   selector: 'app-user-list',
@@ -11,10 +12,14 @@ import { UserCardComponent } from '../../components/user-card/user-card.componen
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
-  users:IUser[] = [];
-  usersService= inject(UsersService);
+ 
+  usersServices = inject(UsersService);
+  arrUsers:IUser[] = [];
+
 
   ngOnInit(): void {
-    this.users = this.usersService.getAll();
+    this.usersServices.getAll().subscribe((response: any )=> {
+      this.arrUsers = response.results;
+    })
   }
 }

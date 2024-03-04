@@ -1,17 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IUser } from '../interfaces/iuser.interface';
-import { Users } from '../db/users.db';
+import { HttpClient } from '@angular/common/http';
+import { Observable, lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsersService {
-
-  private arrUsers: IUser [] = Users;
-
-  getAll(): IUser [] {
-    return this.arrUsers
+  httpClient = inject(HttpClient);
+  baseUrl = 'https://peticiones.online/api/users';
+  
+  getAll() : Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.baseUrl);
   }
+
 }
 
 

@@ -1,7 +1,7 @@
-<div class="card shadow border-1 border text center p-3 mt-2">
-    <figure>
-        <img class="img-fluid" [src]="'./assets/images/' + myUser.photo" [alt]="myUser.name">
-    </figure>
-    <h3>{{myUser.name}} {{myUser.lastname}} </h3>
-    <app-user-buttons></app-user-buttons>
-</div>
+<div class="card" style="width: 18rem,">
+    <img [src]="myUser.image" class="card-img-top" [alt]="myUser.first_name">
+    <div class="card-body">
+      <p class="card-text text-center">{{myUser.first_name +" "+ myUser.last_name}}</p>
+        <app-user-buttons></app-user-buttons>
+    </div>
+  </div>
