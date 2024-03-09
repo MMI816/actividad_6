@@ -1,5 +1,5 @@
 <div class="card mb-3">
-    <img [src]="myUser.image" class="card-img-top" [alt]="myUser.first_name">
+    <img [src]="myUser.image" class="mt-4 rounded-circle mx-auto d-block" style="width: 75%" [alt]="myUser.first_name">
     <div class="card-body">
       <p class="card-text text-center">{{myUser.first_name +" "+ myUser.last_name}}</p>
         <app-user-buttons [parent]="'card'" [id]="myUser._id"></app-user-buttons>

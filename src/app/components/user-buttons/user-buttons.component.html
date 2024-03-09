@@ -1,9 +1,9 @@
-<div class="d-flex btn-outline-dark gap-2">
+<div class="d-flex gap-2">
     @if (parent === 'card'){
-        <a class="btn btn-outline-dark" [routerLink]="['/user', id]"><i class="fa-regular fa-address-card"></i>Detalle</a>
+        <a class="btn btn btn-light" [routerLink]="['/user', id]"><i class="fa-regular fa-address-card"></i>Detalle</a>
     }@else if (parent === 'view'){
-        <a class="btn btn-outline-dark" [routerLink]="['/user']"><i class="fa-solid fa-user-check"></i>Volver al listado</a>
+        <a class="btn btn btn-light" [routerLink]="['/user']"><i class="fa-solid fa-user-check"></i>Volver al listado</a>
     }
-    <a class="btn btn-outline-dark" [routerLink]="['/update', 'user', id]"><i class="fa-solid fa-user-check"></i>Actualizar</a>
-    <button class="btn btn-outline-dark" (click)="borrarUser(id)"><i class="fa-solid fa-trash-can"></i>Borrar</button>
+    <a class="btn btn btn-light" [routerLink]="['/update', 'user', id]"><i class="fa-solid fa-user-check"></i>Actualizar</a>
+    <button class="btn btn btn-light" (click)="borrarUser(id)"><i class="fa-solid fa-trash-can"></i>Borrar</button>
 </div>
