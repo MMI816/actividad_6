@@ -1,1 +1,54 @@
-<p>user-form works!</p>
+<h1>NUEVO USUARIO</h1> 
+<section class="container m-5">
+    <form [formGroup]="modelForm" class="card p-3 shadow" (ngSubmit)="getDataForm()">
+
+        <div class="my-2">
+            <label for="firstname" class="form-label">Nombre Usuario</label>
+            <input type="text" class="form-control" placeholder="Introduce un nombre" id="firstname" formControlName="first_name">
+            @if (checkControl('first_name', 'required')) {
+                <p class="error text-danger">Campo requerido</p>
+            }
+            @if (checkControl('first_name', 'minlength')) {
+                <p class="error text-danger">El campo tiene que tener mínimo 3 carácteres</p>
+            }
+            
+        </div>
+
+        <div class="my-2">
+            <label for="lastname" class="form-label">Apellido Usuario</label>
+            <input type="text" class="form-control" placeholder="Introduce tu apellido" id="lastname" formControlName="last_name">
+            @if (checkControl('last_name', 'required')) {
+                <p class="error text-danger">Campo requerido</p>
+            }
+            @if (checkControl('last_name', 'minlength')) {
+                <p class="error text-danger">El campo tiene que tener mínimo 3 carácteres</p>
+            }
+            
+        </div>
+
+        <div class="my-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" placeholder="Introduce tu email" id="email" formControlName="email">
+            @if (checkControl('email', 'required')) {
+                <p class="error text-danger">Campo requerido</p>
+            }
+            @if (checkControl('email', 'pattern')) {
+                <p class="error text-danger">El campo tiene que ser un email</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="text" class="form-control" placeholder="Introduce una imagen tuya" id="image" formControlName="image">
+            @if (checkControl('image', 'required')) {
+                <p class="error text-danger">Campo requerido</p>
+            }
+            @if (checkControl('image', 'pattern')) {
+                <p class="error text-danger">El campo tiene que ser un email</p>
+            }
+        <input type="submit" value="Guardar" class="btn border-dark mt-3" [disabled]="!modelForm.valid">    
+        </div>
+        
+    </form>
+</section>
+

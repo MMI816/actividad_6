@@ -1,1 +1,18 @@
-<p>user-view works!</p>
+<section class="d-flex container">
+    <div class="row align-items-center">
+        <div class="col-md-4 text-center border-end border-2">
+            <img [src]="unUser.image" [alt]="unUser.first_name" class="rounded-circle img-fluid"/>
+        </div>
+        <div class="col-md-8">
+            <div>
+                <h3>{{unUser.first_name}} </h3>
+                <h3>{{unUser.last_name}} </h3>
+                <p><strong>Nombre Usuario:</strong> {{unUser.first_name}}</p>
+                <p><strong>Email:</strong> {{unUser.email}}</p>
+            </div>
+            <app-user-buttons [parent]="'view'" [id]="unUser._id" class="btn"></app-user-buttons>
+        </div>
+    </div>    
+</section>
+
+

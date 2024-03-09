@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { IUser } from '../../interfaces/iuser.interface';
 import { RouterLink } from '@angular/router';
 import { UserButtonsComponent } from '../user-buttons/user-buttons.component';
@@ -12,4 +12,5 @@ import { UserButtonsComponent } from '../user-buttons/user-buttons.component';
 })
 export class UserCardComponent {
   @Input() myUser!:IUser;
+
 }

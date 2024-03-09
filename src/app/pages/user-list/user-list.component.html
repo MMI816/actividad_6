@@ -1,8 +1,9 @@
 <section class="m-4 row">
-    @for (user of arrUsers; track user.id) {
+    @for (user of arrUsers; track user._id) {
     <article class="col-12 col-md-6 col-lg-3 p-3">
         <app-user-card [myUser]="user"></app-user-card>
     </article>
     } <!--@empty {
         <strong>No existen usuarios registrados</strong>}-->
 </section>
+
