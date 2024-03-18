@@ -1,9 +1,16 @@
-<section class="m-4 row">
-    @for (user of arrUsers; track user._id) {
+<section>
+    <div class="d-md-flex justify-content-md-center gap-5">
+        <a class="btn btn-primary rounded-circle btn-lg" aria-current="page" href="#" (click)="changePage(1)">1</a>
+        <a class="btn btn-primary rounded-circle btn-lg" aria-current="page" href="#" (click)="changePage(2)">2</a>
+        <a class="btn btn-primary rounded-circle btn-lg" aria-current="page" href="#" (click)="changePage(3)">3</a>
+    </div>
+    <div class="m-4 row">
+    @for (user of Users; track user._id) {
     <article class="col-12 col-md-6 col-lg-3 p-3">
         <app-user-card [myUser]="user"></app-user-card>
     </article>
-    } <!--@empty {
-        <strong>No existen usuarios registrados</strong>}-->
+    } 
+    </div>
+
 </section>
 
