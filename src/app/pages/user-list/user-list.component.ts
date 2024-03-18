@@ -14,11 +14,15 @@ import { RouterOutlet } from '@angular/router';
 export class UserListComponent {
  
   usersServices = inject(UsersService);
-  arrUsers:IUser[] = [];
+  Users:IUser[] = [];
 
 
   async ngOnInit(): Promise<void> {
-  this.arrUsers = await this.usersServices.getAllPromise()};
+  this.Users = await this.usersServices.getAll()};
   
+  changePage(page: number): void {
+    this.usersServices.getAll(page).then(users => this.Users = users);
+  }
+
   }
 

@@ -33,8 +33,6 @@ export class UserFormComponent {
     })
   }
 
-  //para reutilizar el formulario debemos pedir los parametros de ruta, si existen actualizamos, sino insertamos.
-
   ngOnInit() {
     this.activatedRoute.params.subscribe(async(params: any) => {
       if(params.id){
